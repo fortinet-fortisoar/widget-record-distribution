@@ -1,17 +1,17 @@
 /* Copyright start
   MIT License
-  Copyright (c) 2025 Fortinet Inc
+  Copyright (c) 2026 Fortinet Inc
   Copyright end */
-  
+
 'use strict';
 (function () {
   angular
     .module('cybersponse')
-    .controller('recordDistribution105Ctrl', recordDistribution105Ctrl);
+    .controller('recordDistribution106Ctrl', recordDistribution106Ctrl);
 
-  recordDistribution105Ctrl.$inject = ['$scope', '$rootScope', 'config', '$state', '_', 'Entity', 'localStorageService', 'Query', 'API', '$resource', 'recordDistributionService', 'ViewTemplateService', 'appModulesService', '$interpolate', 'CommonUtils', 'Modules', 'widgetUtilityService', 'versionService'];
+  recordDistribution106Ctrl.$inject = ['$scope', '$rootScope', 'config', '$state', '_', 'Entity', 'localStorageService', 'Query', 'API', '$resource', 'recordDistributionService', 'ViewTemplateService', 'appModulesService', '$interpolate', 'CommonUtils', 'Modules', 'widgetUtilityService', 'versionService', 'compressionService'];
 
-  function recordDistribution105Ctrl($scope, $rootScope, config, $state, _, Entity, localStorageService, Query, API, $resource, recordDistributionService, ViewTemplateService, appModulesService, $interpolate, CommonUtils, Modules, widgetUtilityService, versionService) {
+  function recordDistribution106Ctrl($scope, $rootScope, config, $state, _, Entity, localStorageService, Query, API, $resource, recordDistributionService, ViewTemplateService, appModulesService, $interpolate, CommonUtils, Modules, widgetUtilityService, versionService, compressionService) {
     var entity = null;
     var chartData = { 'data': [], 'edges': [] };
     var _config = angular.copy(config);
@@ -383,9 +383,16 @@
           query.filters = query.filters.concat(addFilter);
           var widgetQuery = new Query();
           widgetQuery.widgetQuery = { filters: $scope._minify(query.filters), logic: query.logic };
+          if(widgetQuery.widgetQuery && widgetQuery.widgetQuery.filters && widgetQuery.widgetQuery.filters.length > 0) {
+            angular.forEach(widgetQuery.widgetQuery.filters, function (filter) {
+              if(filter.type === 'object' && filter._value) {
+                delete filter._value;
+              }
+            });
+          }
           $state.go('main.modules.list', {
             module: _config.resource,
-            query: encodeURIComponent(JSON.stringify(widgetQuery)),
+            query: compressionService.compressForUrl(widgetQuery),
             qparam: $state.params.qparam,
             widgetParams: true
           });

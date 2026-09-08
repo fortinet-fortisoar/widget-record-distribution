@@ -1,17 +1,17 @@
 /* Copyright start
   MIT License
-  Copyright (c) 2025 Fortinet Inc
+  Copyright (c) 2026 Fortinet Inc
   Copyright end */
   
 'use strict';
 (function () {
   angular
     .module('cybersponse')
-    .controller('editRecordDistribution105Ctrl', editRecordDistribution105Ctrl);
+    .controller('editRecordDistribution106Ctrl', editRecordDistribution106Ctrl);
 
-  editRecordDistribution105Ctrl.$inject = ['$scope', '$uibModalInstance', 'config', 'appModulesService', '$state', 'Entity', 'FormEntityService', 'widgetUtilityService'];
+  editRecordDistribution106Ctrl.$inject = ['$scope', '$uibModalInstance', 'config', 'appModulesService', '$state', 'Entity', 'FormEntityService', 'widgetUtilityService'];
 
-  function editRecordDistribution105Ctrl($scope, $uibModalInstance, config, appModulesService, $state, Entity, FormEntityService, widgetUtilityService) {
+  function editRecordDistribution106Ctrl($scope, $uibModalInstance, config, appModulesService, $state, Entity, FormEntityService, widgetUtilityService) {
     $scope.cancel = cancel;
     $scope.save = save;
     $scope.page = $state.params.page;

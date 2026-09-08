@@ -2,8 +2,8 @@
     "name": "recordDistribution",
     "title": "Record Distribution",
     "subTitle": "Ability to visualize items/records and their correlations in different levels based on a given grouping context.",
-    "version": "1.0.5",
-    "published_date": 1751968388,
+    "version": "1.0.6",
+    "published_date": 1787815301,
     "releaseNotes": "available",
     "metadata": {
         "description": "This widget has the following notable configurations available:\n- Ability to group records by a field in the record, say “Levels” in Assets, which will be a Picklist.\n- Ability to apply a filter on data source to allow limiting of input records.\n- Ability to select which grouping values in the picklist to show in the view.\n- Ability to show/hide record correlations.\n- Ability to view all the records in the list grid, in scenarios where there are more records that can fit in the view.\n- Ability to assign different icons to different types of records.\n- Ability to click-through a record node to its respective detail view.\n- Views adaptive in both light and dark themes.\n- Ability to add this on a dashboard/report or a within an incident detail view.",
@@ -15,12 +15,12 @@
         "certified": "Yes",
         "publisher": "Fortinet",
         "snapshots": [
-            "https:\/\/repo.fortisoar.fortinet.com\/fsr-widgets\/recordDistribution-1.0.5\/images\/record-distribution-settings.png",
-            "https:\/\/repo.fortisoar.fortinet.com\/fsr-widgets\/recordDistribution-1.0.5\/images\/record-distribution.png"
+            "recordDistribution-1.0.6\/images\/record-distribution-settings.png",
+            "recordDistribution-1.0.6\/images\/record-distribution.png"
         ],
-        "help_online": "https:\/\/github.com\/fortinet-fortisoar\/widget-record-distribution\/blob\/release\/1.0.5\/README.md",
+        "help_online": "https:\/\/github.com\/fortinet-fortisoar\/widget-record-distribution\/blob\/release\/1.0.6\/README.md",
         "compatibility": [
-            "7.6.1"
+            "8.0.1"
         ]
     }
 }
